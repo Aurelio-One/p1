@@ -104,9 +104,16 @@ nav .header-links a:hover {
 /* FILTERS */
 .filters {
     font-weight: 700;
+    column-gap: 30px;
+    align-items: center;
 }
+
 .filters>div>span {
     font-size: 18px;
+}
+
+.filters-list {
+    column-gap: 30px;
 }
 
 .filter {
@@ -121,12 +128,9 @@ nav .header-links a:hover {
     font-size: 17px;
 
 }
+
 .filter:hover {
     background-color: #DEEBFF;
-}
-
-.filters>*:not(:last-child) {
-    margin-right: 30px;
 }
 
 .filter i {
@@ -303,3 +307,46 @@ footer>div>a:not(:last-child) {
     margin-bottom: 12px;
 }
 
+
+/* TABLET */
+@media screen and (max-width : 991px) {
+    .filters {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 15px;
+    }
+
+    .filters-list {
+        column-gap: 12px;
+        row-gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .filter {
+        flex: 0 0 calc(50% - 6px);
+    }
+    .filters > div:first-child {
+        margin-bottom: 15px;
+    }
+    #stays {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    #stays .offers-container, #stays .trending-container {
+        flex: initial;
+    }
+    #stays .trending {
+        flex-direction: row;
+        column-gap: 20px;
+    }
+    #stays .trending img {
+        width: 106px;
+    }
+    #stays .trending .card {
+        flex: 33.33%;
+    }
+    #activities img {
+        height: 211px;
+    }
+}
