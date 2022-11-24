@@ -26,16 +26,24 @@ i {
     padding: 0 50px;
 }
 
-/* NAVIGATION */
-nav {
+/* UTILITIES */
+.flexbox {
     display: flex;
+}
+
+.flexbox.align-center {
+    align-items: center;
+}
+
+.flexbox.space-between {
     justify-content: space-between;
 }
 
-nav .header-logo {
-    display: flex;
-    align-items: center;
+.flexbox.column {
+    flex-direction: column;
 }
+
+/* NAVIGATION */
 
 nav .header-links a {
     width: 162px;
