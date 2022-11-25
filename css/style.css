@@ -414,6 +414,10 @@ footer>div>a:not(:last-child) {
         border: none;
     }
 
+    #search input {
+        width: calc(100% - 100px);
+    }
+
     .filter>span {
         font-size: 11px;
     }
