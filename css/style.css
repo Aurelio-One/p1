@@ -418,7 +418,7 @@ footer>div>a:not(:last-child) {
         font-size: 11px;
     }
 
-    #stays-section-section {
+    #stays-section {
         flex-direction: column-reverse;
     }
 
