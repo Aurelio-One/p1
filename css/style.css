@@ -55,7 +55,6 @@ i {
 }
 
 /* NAVIGATION */
-
 nav .header-links a {
     width: 162px;
     display: inline-block;
@@ -82,7 +81,6 @@ nav .header-links a:first-child {
     color: #000000;
     padding: 16px 0 15px 0;
     font-size: 18px;
-
 }
 
 #search input {
@@ -116,7 +114,7 @@ nav .header-links a:first-child {
     align-items: center;
 }
 
-.filters>div>span {
+.filters .filters-label {
     font-size: 18px;
 }
 
@@ -132,7 +130,7 @@ nav .header-links a:first-child {
     height: 50px;
 }
 
-.filter>span {
+.filter .filter-name {
     font-size: 17px;
 
 }
@@ -180,7 +178,6 @@ nav .header-links a:first-child {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-
 }
 
 #stays-section .offers .card, #stays-section .trending .card {
@@ -209,7 +206,7 @@ nav .header-links a:first-child {
 }
 
 .details {
-    padding: 5px 15px 10px 15px;
+    padding: 0 15px 10px 15px;
 }
 
 .details h3 {
@@ -248,9 +245,10 @@ nav .header-links a:first-child {
 }
 
 #stays-section .trending img {
-    height: 144px;
+    min-height: 144px;
     width: 137px;
     border-radius: 20px 0 0 20px;
+    aspect-ratio: 1;
 }
 
 #stays-section .trending .card {
@@ -287,10 +285,11 @@ nav .header-links a:first-child {
 }
 
 #activities-section .card .details {
-    padding: 20px;
     background: #FFFFFF;
+    padding: 0 20px;
     border-radius: 0 0 20px 20px;
     margin-top: -5px;
+    height: 56px;
 }
 
 /* FOOTER */
@@ -300,22 +299,21 @@ footer {
     margin-top: 60px;
 }
 
-footer>div {
+footer .column {
     flex: 33.33%;
     padding-left: 20px;
 }
 
-footer>div>span {
+footer .column span {
     display: block;
     font-weight: 700;
     font-size: 18px;
     margin-bottom: 20px;
 }
 
-footer>div>a:not(:last-child) {
+footer .column a:not(:last-child) {
     margin-bottom: 12px;
 }
-
 
 /* TABLET */
 @media screen and (max-width : 991px) {
@@ -334,6 +332,13 @@ footer>div>a:not(:last-child) {
 
     .filter {
         flex: 0 0 calc(50% - 6px);
+        padding: 0 15px;
+    }
+
+    .filter i {
+        width: 40px;
+        text-align: center;
+        margin-right: 0;
     }
 
     #stays-section {
@@ -351,11 +356,15 @@ footer>div>a:not(:last-child) {
     }
 
     #stays-section .trending img {
-        width: 106px;
+        max-width: 106px;
     }
 
     #stays-section .trending .card {
         flex: 33.33%;
+    }
+
+    #stays-section .trending .card .details {
+        padding: 12px 10px;
     }
 
     #activities-section {
@@ -364,6 +373,10 @@ footer>div>a:not(:last-child) {
 
     #activities-section img {
         height: 211px;
+    }
+
+    #activities-section .card .details {
+        height: 70px;
     }
 }
 
@@ -387,6 +400,7 @@ footer>div>a:not(:last-child) {
         width: 100%;
         display: flex;
         justify-content: space-between;
+        margin: 30px 0 10px 0;
     }
 
     nav .header-links a {
@@ -396,6 +410,10 @@ footer>div>a:not(:last-child) {
         padding: 20px 0;
         border-top: none;
         border-bottom: 2px solid #F2F2F2;
+    }
+
+    #search {
+        margin: 30px 0;
     }
 
     #search button:first-of-type {
@@ -418,12 +436,35 @@ footer>div>a:not(:last-child) {
         width: calc(100% - 100px);
     }
 
-    .filter>span {
+    .filters-list {
+        column-gap: 14px;
+        row-gap: 17px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .filter {
+        padding: 0 8px;
+        flex: 0 0 calc(50% - 7px);
+    }
+
+    .filter i {
+        width: 32px;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .filter .filter-name {
         font-size: 11px;
+    }
+
+    .result {
+        margin: 40px 0 0 0;
     }
 
     #stays-section {
         flex-direction: column-reverse;
+        row-gap: 30px;
     }
 
     #stays-section .offers-container {
@@ -449,13 +490,30 @@ footer>div>a:not(:last-child) {
         padding: 28px 20px 47px;
     }
 
-    #stays-section .trending, #activities-section>article>.flexbox {
+    #stays-section .trending .card .details {
+        padding: 15px;
+    }
+
+    #stays-section .trending {
+        flex-direction: column;
+        row-gap: 11px;
+    }
+
+    #stays-section .trending img {
+        max-width: 137px;
+    }
+
+    #activities-section>article>.flexbox {
         flex-direction: column;
         row-gap: 24px;
     }
 
     #activities-section img {
         height: 134px;
+    }
+
+    #activities-section .card .details {
+        height: 56px;
     }
 
     footer {
